@@ -1,0 +1,4 @@
+dedup: dedup.h dedup.cpp
+
+    g++ -v -std=gnu++11 -o dedup -pedantic -Wall -Werror  dedup.cpp
+	g++ -o test-file2 -ggdb

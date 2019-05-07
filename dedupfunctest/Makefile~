@@ -1,0 +1,2 @@
+test-file:test-f.cpp
+	g++ o test-file -ggdb3 -std=gnu++98 -pedantic -Wall -Werror test-f.cpp

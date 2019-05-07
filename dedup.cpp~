@@ -1,0 +1,31 @@
+#include "dedup.h"
+
+std::string file_to_str(const char * filename) {
+  std::ifstream input;
+  input.open(filename);  // filename can be pathway of filename
+  std::stringstream buffer;
+  buffer << input.rdbuf();
+  std::string lines = buffer.str();
+  return lines;
+}
+
+void file_search(const char * dir_name) {
+  DIR * dir;  // pointer to the opened directory
+  //  struct dirent * entry;  // for readdir - a pointer to the dirent formed.
+  //  char current = '.';
+  // char parent[] = "..";
+
+  dir = opendir(dir_name);
+  if (dir == NULL) {
+    std::cout << "Directory not here" << std::endl;
+    return;
+  }
+
+  closedir(dir);
+}
+
+int main() {
+  std::cout << file_to_str("/home/rwy2/ece551/098_dedup/text1.txt");  // test file_to_string
+  file_search("a");
+  return 0;
+}
